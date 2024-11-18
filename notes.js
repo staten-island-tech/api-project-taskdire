@@ -5,7 +5,7 @@ async function getdata() {
   //fetch return a promise
 
   try {
-    const response = await fetch("url link");
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
     if (response.status != 200) {
       throw new Error(response);
     } else {
