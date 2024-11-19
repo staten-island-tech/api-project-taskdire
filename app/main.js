@@ -1,5 +1,5 @@
 import "./style.css";
-const url = "https://valorant-api.com/v1/maps";
+const url = "https://valorant-api.com/v1/sprays";
 
 async function getdata() {
   //fetch return a promise
@@ -19,3 +19,19 @@ async function getdata() {
 }
 
 getdata();
+
+function Cards(data) {
+  const apidata = data.data;
+  apidata.forEach((sprays) => {
+    Domselectors.box.insertAdjacentHTML(
+      "beforeend",
+      `<div class="card">
+        <h2>${sprays.displayName}</h2>
+        <img src="${sprays.displayIcon}" alt="${sprays.displayName}" class="card-img">
+      </div>`
+    );
+  });
+}
+
+getdata();
+Cards();
