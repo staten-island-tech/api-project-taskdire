@@ -1,4 +1,5 @@
 import "./style.css";
+import { Domselectors } from "/dom";
 const url = "https://valorant-api.com/v1/sprays";
 
 async function getdata() {
@@ -10,7 +11,8 @@ async function getdata() {
       throw new Error(response);
     } else {
       const data = await response.json();
-      console.log(data);
+      console.log(data.data);
+      Cards(data);
     }
   } catch (error) {
     console.log(error);
@@ -22,16 +24,13 @@ getdata();
 
 function Cards(data) {
   const apidata = data.data;
-  apidata.forEach((sprays) => {
+  apidata.forEach((item) => {
     Domselectors.box.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
-        <h2>${sprays.displayName}</h2>
-        <img src="${sprays.displayIcon}" alt="${sprays.displayName}" class="card-img">
+        <h2>${item.displayName}</h2>
+        <img src="${item.displayIcon}" alt="${item.displayName}" class="card-img">
       </div>`
     );
   });
 }
-
-getdata();
-Cards();
