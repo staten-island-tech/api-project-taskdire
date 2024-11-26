@@ -1,4 +1,5 @@
 import { Domselectors } from "/dom";
+import "./style.css";
 const url = "https://valorant-api.com/v1/sprays";
 
 async function getdata() {
@@ -26,11 +27,10 @@ function Cards(data) {
   apidata.forEach((item) => {
     Domselectors.box.insertAdjacentHTML(
       "beforeend",
-      `<div class="card w-1/5 h-[200vw] bg-red-500 rounded-3x1 flex flex-col items-center justify-evenly m-8 border-2 border-black">
+      `<div class="card w-4/5 h-[10vw] bg-red-500 rounded-3x1 flex flex-col items-center justify-evenly m-8 border-2 border-black">
         <h2>${item.displayName}</h2>
         <img src="${item.displayIcon}" alt="${item.displayName}" class="card-img">
       </div>`
     );
-    x;
   });
 }
