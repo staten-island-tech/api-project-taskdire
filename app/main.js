@@ -3,8 +3,7 @@ import "./style.css";
 const url = "https://valorant-api.com/v1/sprays";
 
 async function getdata() {
-  //fetch return a promise
-
+  //fetch returns a promise
   try {
     const response = await fetch(url);
     if (response.status != 200) {
@@ -16,7 +15,7 @@ async function getdata() {
     }
   } catch (error) {
     console.log(error);
-    alert("sorry coud not find this");
+    alert("Sorry, could not find this.");
   }
 }
 
@@ -27,9 +26,9 @@ function Cards(data) {
   apidata.forEach((item) => {
     Domselectors.box.insertAdjacentHTML(
       "beforeend",
-      `<div class="card w-4/5 h-[10vw] bg-red-500 rounded-3x1 flex flex-col items-center justify-evenly m-8 border-2 border-black">
-        <h2>${item.displayName}</h2>
-        <img src="${item.displayIcon}" alt="${item.displayName}" class="card-img">
+      `<div class="card w-100 h-100 bg-red-500 rounded-3xl flex flex-col items-center justify-evenly m-2 border-2 border-black">
+        <h1 class="text-x2 text-white">${item.displayName}</h1>
+        <img src="${item.displayIcon}" alt="${item.displayName}" class="card-img rounded-3xl  w-50% h-50%">
       </div>`
     );
   });
