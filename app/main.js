@@ -1,6 +1,6 @@
 import { Domselectors } from "/dom";
 import "./style.css";
-const url = "https://valorant-api.com/v1/sprays";
+const url = "https://valorant-api.com/v1/agents";
 
 async function getdata() {
   //fetch returns a promise
