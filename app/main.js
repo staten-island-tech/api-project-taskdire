@@ -26,7 +26,8 @@ function Cards(data) {
   apidata.forEach((item) => {
     Domselectors.box.insertAdjacentHTML(
       "beforeend",
-      `<div class="card w-1/6 h-1000000000000000000 bg-red-500 rounded-3xl flex flex-col items-center justify-evenly m-2 border-2 border-black">
+      `<div class="card w-1/6 h-[400px] bg-red-500 rounded-3xl flex flex-col items-center justify-evenly m-2 border-2 border-black">
+      <h1 class="text-x2 text-white">${item.displayName}</h1>
         <img src="${item.displayIcon}" alt="${item.displayName}" class="card-img rounded-3xl  w-50% h-50%">
       </div>`
     );
