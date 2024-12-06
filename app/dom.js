@@ -1,6 +1,6 @@
 const Domselectors = {
   box: document.querySelector(".container"),
-  Initiator: document.querySelector(".Initiator"),
+  button: document.querySelector(".button-container"),
 };
 
 export { Domselectors };
